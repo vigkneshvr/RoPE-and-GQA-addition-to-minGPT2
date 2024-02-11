@@ -13,7 +13,9 @@ The dataset used for this is a collection of the complete works of Shakespeare. 
 | Model sequence length  | --data.block_size=128 ( model.block_size is autoset based on this flag)  |
 | Directory where model is stored  | --system.work_dir=out/new_chargpt  |
 |Number of query heads(hyperparameter for GQA) |--model.n_query_head=6|
-| Number of key-value heads (hyperparameter for GQA)  | --model.n_kv_head=3 (n_query_head must be divisible by n_kv_head) (For standard multi-head attention n_query_head = n_kv_head)t  |
+| Number of key-value heads (hyperparameter for GQA)  | --model.n_kv_head=3 
+(n_query_head must be divisible by n_kv_head) 
+(For standard multi-head attention n_query_head = n_kv_head)  |
 | Directory from which to load a model trained in a previous run  | --model.pretrained_folder=out/chargpt/pretrained  |
 | Whether to enable RoPE embeddings  | --model.rope=True  |
 | Number of iterations to train the model  | --trainer.max_iters=200   |
