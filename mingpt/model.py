@@ -36,12 +36,8 @@ class NewGELU(nn.Module):
 
 class RotaryPositionalEmbeddings(nn.Module):
     """ 
-    TODO: Implement RoPE introduced in the paper RoFormer: Enhanced Transformer with Rotary Position Embedding.
+    RoPE implementation as introduced in the paper RoFormer: Enhanced Transformer with Rotary Position Embedding.
     Reference: https://arxiv.org/abs/2104.09864
-    You will be implementing equation 34 in the paper (the computationally efficient form of the rotary matrix
-    as covered in recitation).
-    Refer to the "Example: Converting Math to PyTorch Code" slide from recitation if you need help translating 
-    the equation into code.
     """
 
     def __init__(self, d: int, base: int = 10_000):
@@ -69,8 +65,6 @@ class RotaryPositionalEmbeddings(nn.Module):
         self.cos_cached = idx_theta.cos()[ None, None,:, :]
         self.sin_cached = idx_theta.sin()[None,None,:, :]
 
-        # raise NotImplementedError("Rotary embeddings cache not implemented.")
-
     def forward(self, x: torch.Tensor):
         """
         Perform the forward pass with the input x, following equation 34 in the paper.
@@ -81,9 +75,7 @@ class RotaryPositionalEmbeddings(nn.Module):
         x_rope = (x_rope * self.cos_cached[:x.shape[0]]) + (neg_half_x * self.sin_cached[:x.shape[0]])
 
         return torch.cat((x_rope, x_pass), dim=-1)
-
-        # raise NotImplementedError("Forward pass not implemented.")
-
+        
 #############################################################################################################
 
 class CausalSelfAttention(nn.Module):
@@ -110,13 +102,11 @@ class CausalSelfAttention(nn.Module):
         
         self.n_head = config.n_query_head
         self.n_embd = config.n_embd
-        
-        ################################################     TODO     ################################################
         self.rope = config.rope
         if self.rope:
             self.query_rotary_pe = RotaryPositionalEmbeddings(self.n_embd)
             self.key_rotary_pe = RotaryPositionalEmbeddings(self.n_embd)
-            # raise NotImplementedError("Attention initialization using RoPE not implemented.")
+            
         #############################################################################################################
 
     def forward(self, x):
@@ -133,7 +123,7 @@ class CausalSelfAttention(nn.Module):
         if self.rope:
             q=self.query_rotary_pe(q)
             k=self.key_rotary_pe(k)
-            # raise NotImplementedError("Attention forward pass using RoPE not implemented.")
+            
         #############################################################################################################
 
         # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)
@@ -151,7 +141,6 @@ class CausalSelfAttention(nn.Module):
         y = self.resid_dropout(self.c_proj(y))
         return y, end_memory-start_memory
 
-################################################     TODO     ################################################
 class GroupedQueryAttention(nn.Module):
     """
     An implementation of group query attention. 
@@ -184,13 +173,7 @@ class GroupedQueryAttention(nn.Module):
         self.n_embd = config.n_embd
         self.kv_head= config.n_kv_head
 
-        #Your code here
-        # raise NotImplementedError("Initialization is not implemented.")
-
     def forward(self, x):
-
-        #your code here
-        #Dont forget to track memory consumed in the attention computation (similar to the implementation in CausalSelfAttention)
         B, T, C = x.size() # batch size, sequence length, embedding dimensionality (n_embd)
 
         # calculate query, key, values for all heads in batch and move head forward to be the batch dim
@@ -219,7 +202,6 @@ class GroupedQueryAttention(nn.Module):
         # output projection
         y = self.resid_dropout(self.c_proj(y))
         
-        # raise NotImplementedError("Forward pass is not implemented.")
         return y, end_memory-start_memory
     
 #############################################################################################################
