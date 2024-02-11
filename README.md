@@ -27,4 +27,8 @@ The dataset used for this is a collection of the complete works of Shakespeare. 
 | Number of iterations to train the model  | --trainer.max_iters=200   |
 | Device type (useful for debugging), one of| --trainer.device=cpu |
 
+**Results:**
+![image](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/603a75c8-1582-49a3-9f0e-5c6107a05b0f)
+
+
 
