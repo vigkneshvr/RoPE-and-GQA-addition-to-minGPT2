@@ -28,7 +28,9 @@ The dataset used for this is a collection of the complete works of Shakespeare. 
 | Device type (useful for debugging), one of| --trainer.device=cpu |
 
 **Results:**
-![image](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/603a75c8-1582-49a3-9f0e-5c6107a05b0f)
 
+![4_1](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/fc1e7437-63e4-4112-98d1-222f6bef7d36)
 
+![4_5](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/0b554cc6-de6c-46a6-bf67-d0879ee60bd4)
 
+![4_7](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/f8d2c495-40d3-4285-a58a-a689f8e5506f)
