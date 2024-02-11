@@ -33,4 +33,6 @@ The dataset used for this is a collection of the complete works of Shakespeare. 
 
 ![4_5](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/0b554cc6-de6c-46a6-bf67-d0879ee60bd4)
 
+![4_6](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/01501801-5dd7-430b-b2e2-a91845075388)
+
 ![4_7](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/f8d2c495-40d3-4285-a58a-a689f8e5506f)
