@@ -36,3 +36,8 @@ The dataset used for this is a collection of the complete works of Shakespeare. 
 ![4_6](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/01501801-5dd7-430b-b2e2-a91845075388)
 
 ![4_7](https://github.com/vigkneshvr/RoPE-and-GQA-addition-to-MinGPT/assets/48051034/f8d2c495-40d3-4285-a58a-a689f8e5506f)
+
+
+**References:**
+1) the official GPT-2 TensorFlow implementation released by OpenAI: [](https://github.com/openai/gpt-2/blob/master/src/model.py)
+2) huggingface/transformers PyTorch implementation: [](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py)
