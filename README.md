@@ -1,5 +1,5 @@
 Modified current GPT model to to incorporate two of the key ingredients found in state-of-the-art large language models (LLMs), such as LLAMA-2.
-
+  
 The two things modified are as follows:
 1) Rotary Posiiton Embeddings (RoPE)- replaces the existing absolute position embeddings with a relative position embedding that rotates small segments of each key and query vector. [Su et al. 2021](https://arxiv.org/pdf/2104.09864.pdf)
 2) Grouped Query Attention (GQA)- it enables the model to use less memory and run faster [Ainslie et al. 2023](https://arxiv.org/pdf/2305.13245.pdf)
@@ -41,3 +41,4 @@ The dataset used for this is a collection of the complete works of Shakespeare. 
 **References:**
 1) the official GPT-2 TensorFlow implementation released by OpenAI: [karpathy/minGPT](https://github.com/openai/gpt-2/blob/master/src/model.py)
 2) huggingface/transformers PyTorch implementation: [huggingface](https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py)
+3) https://www.cs.cmu.edu/~mgormley/courses/10423/
